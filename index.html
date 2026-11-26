@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaveCraft-HTML5</title>
+  <link rel="stylesheet" href="assets/style.css?v=20261126-brand2">
+
+  <!-- file:// で直接開けるように、通常のscriptを読み込み順にdeferする。 -->
+  <script src="assets/config.js?v=20261126-brand2" defer></script>
+  <script src="assets/world.js?v=20261126-brand2" defer></script>
+  <script src="assets/player.js?v=20261126-brand2" defer></script>
+  <script src="assets/renderer.js?v=20261126-brand2" defer></script>
+  <script src="assets/game.js?v=20261126-brand2" defer></script>
+</head>
+<body>
+  <main id="gameShell">
+    <canvas id="gameCanvas" aria-label="CaveCraft-HTML5のゲーム画面"></canvas>
+
+    <div id="topLeftInfo">
+      WASD: 移動 / Space: ジャンプ / Shift: ダッシュ / C: しゃがみ＋落下防止<br>
+      左クリック: 破壊 / 右クリック: 設置・バケツ / ホイールクリック: ブロック選択<br>
+      1～9・ホイール: ホットバー / E: インベントリ / Esc: ポーズ
+    </div>
+
+    <div id="selectedBlock">選択中: 草ブロック</div>
+    <div id="crosshair" aria-hidden="true"></div>
+
+    <div id="menuOverlay">
+      <section id="menuPanel" aria-labelledby="menuTitle">
+        <div class="menu-kicker">CAVECRAFT-HTML5 / EARLY BLOCK WORLD</div>
+        <h1 id="menuTitle">CaveCraft</h1>
+        <p id="menuDescription">「ゲーム開始」をクリックしてください。</p>
+        <button id="playButton" class="menu-button menu-primary" type="button">ゲーム開始</button>
+        <button id="resetButton" class="menu-button" type="button">ワールドをリセット</button>
+        <label id="seedLabel" for="seedInput">ワールドシード</label>
+        <input id="seedInput" type="number" min="-2147483648" max="2147483647" step="1" inputmode="numeric">
+        <div class="menu-button-row">
+          <button id="saveButton" class="menu-button menu-secondary" type="button">セーブ</button>
+          <button id="loadButton" class="menu-button menu-secondary" type="button">ロード</button>
+        </div>
+        <p id="menuFeedback" aria-live="polite">セーブ・ロードは第9段階で実装予定です。</p>
+        <div class="menu-foot">Escキーでポーズ画面に戻れます</div>
+      </section>
+    </div>
+
+    <!-- Eキーで開くインベントリ。通常・クリエイティブの2ページ。 -->
+    <div id="inventoryOverlay" class="hidden">
+      <section id="inventoryPanel" aria-labelledby="inventoryTitle">
+        <header class="inventory-header">
+          <div>
+            <div class="menu-kicker">CAVECRAFT-HTML5 / ITEMS</div>
+            <h2 id="inventoryTitle">インベントリ</h2>
+          </div>
+          <button id="inventoryCloseButton" class="inventory-close" type="button" aria-label="インベントリを閉じる">×</button>
+        </header>
+
+        <div class="inventory-tabs">
+          <button id="normalTab" class="inventory-tab active" type="button">通常インベントリ</button>
+          <button id="creativeTab" class="inventory-tab" type="button">クリエイティブ</button>
+        </div>
+
+        <section id="normalPage" class="inventory-page">
+          <p class="inventory-help">3段×9列の所持スロットです。枠をクリックすると、選択中のホットバースロットと入れ替わります。</p>
+          <div id="inventoryGrid" class="inventory-grid" aria-label="通常インベントリ 27スロット"></div>
+        </section>
+
+        <section id="creativePage" class="inventory-page hidden">
+          <p class="inventory-help">ブロックやアイテムをクリックすると、通常インベントリの空きスロットへ追加します。</p>
+          <div id="creativeGrid" class="creative-grid" aria-label="クリエイティブアイテム一覧"></div>
+        </section>
+
+        <div class="inventory-hotbar-area">
+          <p class="inventory-help">使いたいホットバースロットを選択してから、通常インベントリのアイテム枠をクリックしてください。</p>
+          <div id="inventoryHotbarGrid" class="inventory-hotbar-grid" aria-label="ホットバーの選択"></div>
+        </div>
+
+        <footer class="inventory-footer">
+          <span id="inventoryStatus">選択中のホットバー枠にアイテムを移せます。</span>
+          <button id="inventoryDoneButton" class="menu-button menu-primary" type="button">閉じる</button>
+        </footer>
+      </section>
+    </div>
+
+    <div id="statusText">画面をクリックするとゲームを開始します。</div>
+    <div id="hotbar" aria-label="ホットバー"></div>
+    <div id="debugInfo">FPS: --</div>
+    <div id="fatalError" class="hidden" role="alert"></div>
+  </main>
+</body>
+</html>
