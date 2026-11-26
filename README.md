@@ -12,7 +12,7 @@ CaveCraft-HTML5は、Webブラウザーでローカル起動できる初期段�
 ```text
 CaveCraft-HTML5/
 ├─ README.md                 Project guide / GitHubで表示する説明
-├─ instructions_説明.txt    Same guide in plain text / 日本語・英語併記の説明書
+├─ instructions_説明.txt    Japanese instruction manual / 日本語の説明書
 ├─ index.html                Game page / ゲーム画面
 ├─ textures/
 │  └─ blocks.png             Texture atlas / テクスチャ画像
