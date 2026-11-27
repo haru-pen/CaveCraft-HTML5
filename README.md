@@ -98,3 +98,18 @@ Do not edit or replace `blocks.png` unless you also update the embedded image in
 - Water flow, transparency, and swimming are not implemented. / 水の流動・透明化・泳ぎは未実装です。
 - Save/load functionality is planned for V3; only the menu UI exists now. / セーブ・ロードの実処理はV3で実装予定です（現在はメニューUIのみです）。
 - Caves and ores are planned for V2. / 洞窟・鉱石はV2で実装予定です。
+
+---
+
+## License / ライセンス
+
+This project is under a custom license. Please check the `LICENSE` file for details.
+- **Personal Use & Editing:** Allowed (Non-commercial only)
+- **Videos & Streaming:** Allowed
+- **Commercial Use & Redistribution:** Prohibited without permission
+
+本プロジェクトには独自の利用規約が適用されます。詳細は `LICENSE` ファイルをご確認ください。
+- **個人利用・編集：** 許可（非商用のみ）
+- **動画投稿・配信：** 許可
+- **商用利用・再配布：** 許可なく禁止
+
