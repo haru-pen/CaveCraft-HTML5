@@ -111,5 +111,5 @@ This project is under a custom license. Please check the `LICENSE` file for deta
 本プロジェクトには独自の利用規約が適用されます。詳細は `LICENSE` ファイルをご確認ください。
 - **個人利用・編集：** 許可（非商用のみ）
 - **動画投稿・配信：** 許可
-- **商用利用・再配布：** 許可なく禁止
+- **商用利用・再配布：** 投稿者の許可がない場合禁止
 
